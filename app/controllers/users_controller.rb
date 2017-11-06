@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def index
     # find all users
     @all_user = User.all
-
   end
 
   def show

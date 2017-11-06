@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Project.destroy_all
+
 5.times do
   new_user = User.new
   new_user.name = Faker::Hobbit.character
@@ -13,4 +16,12 @@
   new_user.password = 'test123'
 
   new_user.save
+end
+
+5.times do
+  Project.create(
+    name: Faker::Hobbit.character,
+    status: ['pending', 'success'].sample,
+    user_id: User.all.sample.id
+  )
 end
