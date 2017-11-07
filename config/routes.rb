@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # we can run it in one line
   root 'pages#home'
   # devise routes
-  devise_for :users
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login', sign_out: 'logout',
+    sign_up: 'register'
+  }
 
   resources :users, only: [:index]
   # need to create this, because by default `resources` automatically
