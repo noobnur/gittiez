@@ -8,6 +8,7 @@ end
 gem 'pry'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 gem 'materialize-sass'
+gem 'devise'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

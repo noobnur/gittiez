@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # get '/users', to: 'users#index' # READ all users
@@ -8,6 +6,9 @@ Rails.application.routes.draw do
   # instead of writing each route line by line,
   # we can run it in one line
   root 'pages#home'
+  # devise routes
+  devise_for :users
+
   resources :users, only: [:index]
   # need to create this, because by default `resources` automatically
   # expect `/:id`
