@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans');
+
+$primary-bg: #8BBF9F;
+$color2: #D6BA73;
+$font-color: white;
+
+$title-font: 'Abril Fatface', cursive;
+$body-font: 'Open Sans', sans-serif;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+body {
+  background-color: $primary-bg;
+  color: $font-color;
+  font-family: $body-font;
+}
+
+h1, h2, h3, h4 {
+  font-family: $title-font;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul li {
+  &:nth-child(even) {
+    color: lighten(red, 50%);
+  }
+
+  &:nth-child(odd) {
+    color: blue;
+  }
+}
