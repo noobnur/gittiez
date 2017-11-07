@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, only: :index
 
   def index
     @projects = Project.all
@@ -9,7 +10,7 @@ class ProjectsController < ApplicationController
     #   json_status: 200
     # }
 
-    render json: @projects
+    # render json: @projects
   end
 
   def show
@@ -21,12 +22,11 @@ class ProjectsController < ApplicationController
   def create
     # find current_user first
     # create new project based on that user
+    
 
-    current_user = User.find(28)
 
     new_project_by_gloin = current_user.projects.build(
-      name: params[:name],
-      status: params[:status]
+      name: params[:name]
     )
 
     new_project_by_gloin.save

@@ -9,19 +9,19 @@
 User.destroy_all
 Project.destroy_all
 
-5.times do
-  new_user = User.new
-  new_user.name = Faker::Hobbit.character
-  new_user.email = Faker::Internet.email
-  new_user.password = 'test123'
-
-  new_user.save
-end
+# 5.times do
+#   new_user = User.new
+#   new_user.name = Faker::Hobbit.character
+#   new_user.email = Faker::Internet.email
+#   new_user.password = 'test123'
+#
+#   new_user.save
+# end
 
 5.times do
   Project.create(
     name: Faker::Hobbit.character,
-    status: ['pending', 'success'].sample,
-    user_id: User.all.sample.id
+    # status: ['pending', 'success'].sample,
+    # user_id: User.all.sample.id
   )
 end
