@@ -22,14 +22,20 @@ class ProjectsController < ApplicationController
   def create
     # find current_user first
     # create new project based on that user
-    
+    current_user.projects.create(params.require(:project).permit(:name))
 
+    redirect_to root_path
 
-    new_project_by_gloin = current_user.projects.build(
-      name: params[:name]
-    )
+    # new_project_by_gloin = current_user.projects.build(
+    #   name: params[:name]
+    # )
+    #
+    # new_project_by_gloin.save
+  end
 
-    new_project_by_gloin.save
+  # action to create new project
+  def new
+    @new_project = Project.new
   end
 
   # PUT request `update`

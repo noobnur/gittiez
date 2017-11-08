@@ -11,12 +11,13 @@
     <nav>
       <div class="nav-wrapper container">
         <div class="col s12">
-          <a href="/" class="brand-logo">Gittiez</a>
+          <%= link_to 'Gittiez', root_path, class: "brand-logo" %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% unless user_signed_in? %>
             <li><%= link_to "Login", new_user_session_path %></li>
             <li><%= link_to "Register", new_user_registration_path %></li>
             <% else %>
+            <li><%= link_to "New Project", new_project_path %></li>
             <li><a href="/edit"><%= current_user.email %></a></li>
             <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -28,15 +29,13 @@
       </div>
     </nav>
 
-    <%= image_tag 'logo.png' %>
-    
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
-    <!-- <pre>
+    <pre>
       <%= params %>
-    </pre> -->
+    </pre>
   </body>
 </html>
