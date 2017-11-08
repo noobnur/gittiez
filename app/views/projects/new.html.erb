@@ -2,7 +2,7 @@
   <div class="row">
     <h1>New Project Form</h1>
 
-    <%= form_for @new_project do |f| %>
+    <%= form_for [current_user, @new_project] do |f| %>
       <%= f.label("Name:") %>
       <%= f.text_field :name %>
       <%= f.submit("Create New Project", class: 'btn') %>

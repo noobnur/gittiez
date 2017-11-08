@@ -3,14 +3,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, only: :index
 
   def index
-    @projects = Project.all
-
-    # output = {
-    #   projects: @projects,
-    #   json_status: 200
-    # }
-
-    # render json: @projects
+    @projects = current_user.projects
   end
 
   def show
@@ -41,7 +34,19 @@ class ProjectsController < ApplicationController
   # PUT request `update`
 
   # DELETE request `destroy`
+  def destroy
+    # find the project by id
+    Project.destroy(params[:id])
 
+    render json: {
+      message: 'ok'
+    }
+
+
+    # deleted_project.destroy
+
+    # redirect_back(fallback_location: root_path)
+  end
 
 
 end

@@ -1,2 +1,15 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<div class="container">
+  <div class="col s12">
+    <h1>My Projects</h1>
+
+    <ul>
+      <% @projects.each do |project| %>
+      <li>
+        <%= project.name %>
+        <%= link_to "Delete", user_project_path(current_user, project), class: "btn", method: :delete, remote: true %>
+      </li>
+      <% end %>
+
+    </ul>
+  </div>
+</div>

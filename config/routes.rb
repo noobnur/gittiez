@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   # expect `/:id`
   get '/users/:name', to: 'users#show' # READ one user by name
 
-  resources :projects, except: [:edit]
+  resources :users do
+    resources :projects, except: [:edit]
+  end
 end
