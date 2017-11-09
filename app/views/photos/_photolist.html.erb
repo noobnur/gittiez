@@ -1,0 +1,12 @@
+<div class="row">
+  <% @all_photos.each do |photo| %>
+  <div class="col s4">
+    <h3><%= photo.title %></h3>
+    <div class="">
+      <img src="<%= photo.url %>" alt="<%= photo.title
+     %>">
+    </div>
+    <small>(<%= photo.created_at %>)</small>
+  </div>
+  <% end %>
+</div>

@@ -21,6 +21,9 @@
               <a class="dropdown-button" href="#!" data-activates="project-dropdown">Project<i class="material-icons right">arrow_drop_down</i>
               </a>
             </li>
+            <li>
+              <%= link_to "Photos", photos_path %>
+            </li>
             <li><a href="/edit"><%= current_user.email %></a></li>
             <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>
