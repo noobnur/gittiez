@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'photos/index'
+
   get 'comments/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -23,5 +25,15 @@ Rails.application.routes.draw do
     resources :projects, except: [:edit]
   end
 
-  resources :comments
+  resources :comments, only: [:index]
+
+  resources :projects do
+    resources :photos, only: [:index]
+  end
+
+  # custom routes to view all photos by a specific user
+  get '/photos', to: 'photos#allphotos'
+
+
+
 end

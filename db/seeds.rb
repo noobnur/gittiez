@@ -17,7 +17,7 @@
 #
 #   new_user.save
 # end
-# 
+#
 # 5.times do
 #   Project.create(
 #     name: Faker::Hobbit.character,
@@ -26,9 +26,17 @@
 #   )
 # end
 
+# 5.times do
+#   Comment.create(
+#     content: Faker::ChuckNorris.fact,
+#     user_id: User.first.id
+#   )
+# end
+
 5.times do
-  Comment.create(
-    content: Faker::ChuckNorris.fact,
-    user_id: User.first.id
+  Photo.create(
+    title: Faker::Cat.name,
+    url: Faker::LoremPixel.image("100x100", false, 'cats'),
+    project_id: Project.all.sample.id
   )
 end
