@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # get '/users', to: 'users#index' # READ all users
@@ -20,4 +22,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :projects, except: [:edit]
   end
+
+  resources :comments
 end

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h1>All comments by <%= current_user.name %></h1>
+
+      <ul>
+        <% @all_comments.each do |comment| %>
+        <li>
+          <h2>Comment #<%= comment.id %></h2>
+          <%= comment.content %>
+          <em>(<%= comment.created_at %>)</em>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
