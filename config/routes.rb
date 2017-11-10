@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       sign_in: 'login', sign_out: 'logout',
       sign_up: 'register'
     },
-    controller: {
+    controllers: {
       omniauth_callbacks: 'omniauth_callbacks'
     }
     #
