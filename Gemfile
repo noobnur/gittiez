@@ -12,6 +12,9 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 
+gem 'nokogiri'
+gem 'rest-client'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
