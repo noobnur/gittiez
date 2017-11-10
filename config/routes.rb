@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     controllers: {
       omniauth_callbacks: 'omniauth_callbacks'
     }
-    #
+  devise_scope :user do
+    delete 'sign_out', :to => 'devise/sessions#destroy'
+  end
 
   resources :users, only: [:index]
   # need to create this, because by default `resources` automatically
