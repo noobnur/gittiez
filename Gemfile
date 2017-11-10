@@ -14,6 +14,7 @@ gem 'jquery-turbolinks'
 
 gem 'nokogiri'
 gem 'rest-client'
+gem 'omniauth-facebook'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
