@@ -7,10 +7,16 @@ Rails.application.routes.draw do
   # we can run it in one line
   root 'pages#home'
   # devise routes
-  devise_for :users, path: '', path_names: {
-    sign_in: 'login', sign_out: 'logout',
-    sign_up: 'register'
-  }
+  devise_for :users,
+    path: '',
+    path_names: {
+      sign_in: 'login', sign_out: 'logout',
+      sign_up: 'register'
+    },
+    controller: {
+      omniauth_callbacks: 'omniauth_callbacks'
+    }
+    #
 
   resources :users, only: [:index]
   # need to create this, because by default `resources` automatically
