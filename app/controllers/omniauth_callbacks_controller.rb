@@ -1,8 +1,9 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     # after login thru fb
+    @user = User.from_omniauth(request.env["omniauth.auth"])
 
-    render json: params
+    render json: @user
 
     # # You need to implement the method below in your model (e.g. app/models/user.rb)
     # @user = User.from_omniauth(request.env["omniauth.auth"])
